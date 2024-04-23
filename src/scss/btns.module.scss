@@ -1,0 +1,29 @@
+.calculate {
+    padding: 5px 5px;
+    text-align: end;
+    color: black;
+    font-size: 25px;
+    font-weight: 900;
+    &__input {
+      width: 240px;
+      height: 60px;  
+      font-size: 36px;
+      font-weight: 800;
+        
+    }
+
+    &__btn_number {
+      width: 72px;
+      height:48px;
+      padding: 24px 30px 25px 30px;
+      border-radius: 6px 0px 0px 0px;
+      border: 1px 0px 0px 0px;
+      box-sizing: border-box;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 15px;
+      text-align: center;
+
+      
+    }
+  }
