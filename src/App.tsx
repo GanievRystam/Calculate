@@ -1,36 +1,37 @@
 // import Canvas from './components/Canvas';
 import Btn from './components/Btn';
-import * as  styles from './assets/css/index.module.scss';
+// import * as  styles from './assets/css/index.module.scss';
 import * as  btns from './scss/btns.module.scss';
+import Input from './components/Input';
+import ThemeContext from './store/context';
+import { useContext } from 'react';
+import { classNames } from './utils/classNames';
+// import { allOper } from './store/store';
+
 const App = () => {
+  const {numbers,operations, input} = useContext(ThemeContext);
   return (
     <div className="main">
-      <div className="container">
-        <div className="calculate">
-          <h1 className={styles.green}>HTL</h1>
-          <input className={btns.calculate__input} type="number" />
-          <div className="operations">
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
+      <div className={'btns.container'}>
+        <div className={btns.calculate}>
+          <Input cls={btns.calculate__input} value={input}/>
+          <div className={btns.operations}>
+            {operations.map((item) => {
+              return  <Btn>{item}</Btn>
+            })}
           </div>
-          <div className="calculate__number">
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
-            <Btn />
+          <div className={btns.calculate__number}>
+          {numbers.reverse().map((item) => {
+              return  <Btn>{item}</Btn>
+            })}
           </div>
-          <div className="calculate__bottom">
-            <Btn /> 
-            <Btn /> 
+          <div className={btns.calculate__bottom}>
+            <button className={classNames(btns.calculate__btn, {}, [btns.calculate__btn_null])}>0</button> 
+            <Btn>,</Btn>
           </div>
-          <Btn />
+          <div className=''>
+            <button className={classNames(btns.calculate__btn, {}, [btns.calculate__btn_ravno])}>=</button> 
+          </div>
         </div>
         <div className="constructor"></div>
       </div>

@@ -1,7 +1,10 @@
 import * as btns from '../scss/btns.module.scss'
-
-const Btn = () => {
-  return <div className={btns.calculate__btn_number}>1</div>;
+import { classNames } from '../utils/classNames';
+type BtnProps = {
+  children?: React.ReactNode
+};
+const Btn: React.FC<BtnProps> = ({children}) => {
+  return <button className={classNames(btns.calculate__btn, {}, [btns.calculate__btn_number])}>{children}</button>;
 };
 
 export default Btn;
