@@ -1,0 +1,32 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    &_wrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    &__count {
+        margin-top: 10px;
+        height: 35px;
+        background: transparent;
+        border-radius: 5px;
+        border: 1px solid rgba(0, 0, 0, .4);
+        padding: 0 10px;
+        margin-bottom: 15px;
+    }
+    &__label {
+        margin-top: 20px;
+            font-size: 20px;
+            font-weight: 700;
+            letter-spacing: 5px;
+    }
+}
+.main_header {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Montserrat';
+
+}

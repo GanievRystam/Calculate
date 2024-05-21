@@ -1,0 +1,10 @@
+.alarm {
+    background-color: #308fff;
+    text-align: center;
+    width: 100%;
+    padding: 12px 0px;
+    margin-bottom: 10px;
+    &__text {
+        color: white;
+    }
+}

@@ -1,16 +1,19 @@
-import { render } from 'react-dom';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 
-import App from './App';
+import { App } from './app/App';
 import { BrowserRouter } from 'react-router-dom';
-// import { createContext } from 'react';
-import {allOper} from './store/store'
-import ThemeContext from './store/context';
+// import { ThemeProvider } from './app/providers/ThemeProvider';
 
-render(
-  <ThemeContext.Provider value={allOper}>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  </ThemeContext.Provider>,
-  document.getElementById('root'),
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <BrowserRouter>
+      {/* <ThemeProvider> */}
+        <App />
+      {/* </ThemeProvider> */}
+    </BrowserRouter>
+  </StrictMode>,
 );
