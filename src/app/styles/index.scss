@@ -12,15 +12,12 @@ li {
 }
 
 .app {
-    font: var(--font-m);
-    background: var(--bg-color);
-    color: var(--primary-color);
-    min-height: 100vh;
-    font-family: "Times New Roman", sans-serif;
+    height: 100vh;
+    box-sizing: border-box;
 }
 .container {
     max-width: 1220px;
     margin: 0 auto;
-    padding: 25px;
+    padding: 0 25px;
     box-sizing: border-box;
 }

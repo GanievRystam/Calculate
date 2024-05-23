@@ -17,7 +17,8 @@
     &:hover {
         background-color: white;
         color: var(--primary-color);
-        border: 1px solid black;
+        border: 1px solid var(--primary-color);
+        font-weight: bold;
         .btn__innerText{
             margin-left: 30px;
         }

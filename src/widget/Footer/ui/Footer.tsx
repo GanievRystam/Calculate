@@ -4,7 +4,7 @@ const Footer = () => {
     return (
         <footer className={cls.footer}>
                 <div className="container">
-                    <nav className={cls.footer_nav}>
+                    {/* <nav className={cls.footer_nav}>
                         <ul className={cls.footer_nav__items}>
                             <li className={cls.footer_nav__item}>
                                 <a className={classNames(cls.footer_nav__link, {}, [cls.footer_nav__link_first])} href="#">Возможности сайта</a>
@@ -30,8 +30,8 @@ const Footer = () => {
                                 <a className={cls.footer_nav__link} href="#">А я о чём</a>
                             </li>
                         </ul>
-                    </nav>
-                    <div className="text-copyright">MyCompaty.ru © 2024</div>
+                    </nav> */}
+                    <div className={cls.text_copyright}>MyCompaty.ru © 2024</div>
                 </div>
             </footer>
     )

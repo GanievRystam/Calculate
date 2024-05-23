@@ -18,7 +18,10 @@ export const GenerationPassword = () => {
                     </div>
                 </div>
             </div>
-        </section> 
+        </section>
+        {/* <section className="cute">
+            <div className="container"></div>
+        </section>  */}
         <Alarm/>
         <Footer/>
     </>);

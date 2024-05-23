@@ -1,5 +1,9 @@
 .footer {
+    padding: 10px 0;
     background-color: #000F44;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
     &_nav {
         padding: 15px 0;
         display: flex;
@@ -26,5 +30,9 @@
                 font-size: 17px;
             }
         }
+    }
+    .text_copyright {
+        color:white;
+        text-align: center;
     }
 }

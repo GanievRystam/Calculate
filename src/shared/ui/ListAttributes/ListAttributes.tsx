@@ -28,7 +28,9 @@ const ListAttributes = () => {
                     className={cls.form__checkbox} 
                     checked={attribute.checked} 
                     onChange={() => handleCheckboxChange(attribute.id)} 
+                    id={`checkbox-${attribute.id}`}
                 />
+                <label htmlFor={`checkbox-${attribute.id}`} className={cls.form__checkboxFake}></label>
                 <span className="form__att_text">{attribute.label}</span>
                 </li>
             ))}
