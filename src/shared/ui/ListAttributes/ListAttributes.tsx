@@ -1,18 +1,29 @@
 
 import { useState } from 'react';
-import * as cls from './listAttributes.module.scss'
-const ListAttributes = () => {
-    const [attributes, setAttributes] = useState([
-        { id: 1, checked: false, label: 'Использовать прописные буквы' },
-        { id: 2, checked: false, label: 'Использовать строчные буквы' },
-        { id: 3, checked: false, label: 'Использовать цифры' },
-        { id: 4, checked: false, label: 'Использовать символы: %, *, ), ?, @, #, $, ~' },
-        { id: 5, checked: false, label: 'Избегать повторения символов' }
-      ]);
+import * as cls from './listAttributes.module.scss';
+import { useDispatch } from 'react-redux';
+import { AppDispatch, editProgress } from '../../../store/store';
+interface Attribute {
+    id: number; checked: boolean; label: string
+}
+interface ListAttributesProps {
+  attributes: Attribute[],
+  setAttributes: (value:any) => void
+} 
+const ListAttributes = ({attributes, setAttributes}:ListAttributesProps) => {
     
+      const dispatch = useDispatch<AppDispatch>();
+
       const handleCheckboxChange = (id:number) => {
         const updatedAttributes = attributes.map(attribute => {
           if (attribute.id === id) {
+
+            if(!attribute.checked) {
+              dispatch(editProgress(25))
+            }else {
+              dispatch(editProgress(-25))
+            }
+            
             return { ...attribute, checked: !attribute.checked };
           }
           return attribute;

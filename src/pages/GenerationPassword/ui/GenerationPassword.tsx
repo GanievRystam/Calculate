@@ -3,6 +3,7 @@ import Alarm from "../../../shared/ui/Alarm/Alarm";
 import BlockMainText from "../../../widget/BlockMainText";
 import GenerationForm from "../../../widget/GenerationForm";
 import * as cls from './generationPassword.module.scss'
+import ProgressBar from "../../../shared/ui/progressBar/ProgressBar";
 export const GenerationPassword = () => {
     return(
     <>
@@ -10,12 +11,7 @@ export const GenerationPassword = () => {
             <div className="container">
                 <div className={cls.generation_wrap}>
                     <GenerationForm/>
-                    <div className={cls.progressBar}>
-                        <label htmlFor="progressFill" className={cls.progressBar__label}>Надёжность пароля</label>
-                        <div className={cls.progressBar__fill} id="progressFill">
-                            <div className={cls.progressBar__overflay}></div>
-                        </div>
-                    </div>
+                    <ProgressBar/>
                 </div>
             </div>
         </section>

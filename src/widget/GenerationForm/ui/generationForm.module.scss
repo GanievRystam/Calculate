@@ -15,11 +15,19 @@
         padding: 0 10px;
         margin-bottom: 15px;
     }
+    &__error {
+        color: rgb(244, 67, 54);
+        text-align: center;
+        overflow-y: hidden;
+        height: 0;
+        transition: height .5s;
+
+    }
     &__label {
         margin-top: 20px;
-            font-size: 20px;
-            font-weight: 400;
-            letter-spacing: 5px;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 5px;
     }
 }
 .main_header {
