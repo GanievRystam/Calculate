@@ -1,4 +1,4 @@
-import * as cls from './ResultPassword.module.scss';
+import * as cls from './resultPassword.module.scss';
 import Copy from "../../assets/copy-svgrepo-com.svg";
 interface ResultPasswordProps{
     passwords: string[]
