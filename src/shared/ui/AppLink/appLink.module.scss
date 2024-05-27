@@ -1,0 +1,36 @@
+.AppLink {
+    color: var(--primary-color);
+    text-decoration: none;
+    position: relative;
+    transition: all .5s;
+    font-weight: 700;
+    
+    &::after {
+        content: '';
+        position: absolute;
+        width: 0%;
+        bottom: -5px;
+        left: 0px;
+        height: 1px;
+        background-color: #308fff;
+        transition: width .5s;
+    }
+    &:hover{
+        color: #308fff;
+        &::after {
+            width: 102%;
+        }
+    }
+}
+
+.primary {
+    color: var(--primary-color);
+}
+
+.secondary {
+    color: var(--inverted-primary-color);
+}
+
+.red {
+   color: red;
+}

@@ -1,17 +1,23 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "jsx": "react-jsx",
-    "noEmitOnError": true,
-    "noUnusedLocals": true,
-    "removeComments": true,
-    "esModuleInterop": true,
     "outDir": "./dist/",
     "noImplicitAny": true,
     "sourceMap": true,
-    "module": "es6",
+    "module": "ESNext",
+    "target": "es5",
+    "jsx": "react-jsx",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["./src/*"]
+    },
     "allowJs": true,
-    "moduleResolution": "node"
+    "moduleResolution": "node",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
   },
-  "exclude": ["node_modules"]
+  "ts-node": {
+    "compilerOptions": {
+      "module": "CommonJS"
+    }
+  }
 }

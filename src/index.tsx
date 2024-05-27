@@ -1,16 +1,20 @@
-import { render } from 'react-dom';
-
-import App from './App';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { Provider } from 'react-redux';
+import { App } from './app/App';
 import { BrowserRouter } from 'react-router-dom';
-// import { createContext } from 'react';
-import {allOper} from './store/store'
-import ThemeContext from './store/context';
+import store from './store/store';
 
-render(
-  <ThemeContext.Provider value={allOper}>
-  <BrowserRouter>
-    <App />
-  </BrowserRouter>
-  </ThemeContext.Provider>,
-  document.getElementById('root'),
+const rootElement = document.getElementById('root');
+const root = createRoot(rootElement);
+
+root.render(
+  <StrictMode>
+    <Provider store={store}>
+    <BrowserRouter>
+      
+        <App />
+    </BrowserRouter>
+    </Provider>
+  </StrictMode>,
 );

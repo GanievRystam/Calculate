@@ -4,3 +4,7 @@ declare module '*.scss' {
   };
   export = content;
 }
+declare module '*.jpg';
+declare module '*.png';
+declare module '*.svg';
+declare module '*.gif';

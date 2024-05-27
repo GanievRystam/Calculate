@@ -1,0 +1,51 @@
+.form {
+    margin: 0;
+    &__checkbox {
+        height: 19px;
+        width: 19px;
+        opacity: 0;
+        &Fake {
+            height: 20px;
+            width: 20px;
+            background-color: white;
+            position: absolute;
+            pointer-events: none;
+            border-radius: 5px;
+            overflow: hidden;
+            border: 1px solid  var(--secondary-color);;
+            cursor: pointer;
+            &::after {
+                content: '';
+                transform: scale(.01);
+                position: absolute;
+                width: 10px;
+                height: 10px;
+                background: white;
+                background: var(--secondary-color);
+                border-radius: 5px;
+                margin: 4px 4px 3px 4px;
+                transition: transform 1s ease;
+            }
+        }
+    }
+    &__checkbox:checked + .form__checkboxFake {
+        
+        
+      }
+      &__checkbox:checked + .form__checkboxFake::after {
+            transform: scale(2.5);
+            background: var(--secondary-color);
+            transition: transform .4s;
+        
+      }
+    &__attributes{
+        margin: 0;
+    }
+    &__attribute{
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        margin-top: 10px;
+    }
+}

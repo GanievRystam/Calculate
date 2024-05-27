@@ -1,0 +1,40 @@
+.form {
+    display: flex;
+    flex-direction: column;
+    &_wrap {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50px;
+    }
+    &__count {
+        margin-top: 10px;
+        height: 35px;
+        background: transparent;
+        border-radius: 5px;
+        border: 1px solid var(--secondary-color);
+        padding: 0 10px;
+        margin-bottom: 15px;
+    }
+    &__error {
+        color: rgb(244, 67, 54);
+        text-align: center;
+        overflow-y: hidden;
+        height: 0;
+        transition: height .5s;
+
+    }
+    &__label {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: 400;
+        letter-spacing: 5px;
+    }
+}
+.main_header {
+    font-size: 35px;
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    font-family: 'Montserrat';
+
+}
