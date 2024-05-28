@@ -63,6 +63,7 @@ module.exports = {
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
       template: './public/index.html',
+      scriptLoading: 'blocking'
     }),
   ],
 };
