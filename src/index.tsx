@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { App } from './app/App';
 import { BrowserRouter } from 'react-router-dom';
 import store from './store/store';
-
+import './shared/config/i18n';
 const rootElement = document.getElementById('root');
 const root = createRoot(rootElement);
 

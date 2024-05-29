@@ -1,11 +1,12 @@
+import { useTranslation } from 'react-i18next';
 import * as cls from './blockMainText.module.scss'
 const BlockMainText = () => {
-    console.log(cls)
+    const { t, i18n } = useTranslation();
     return (
-        <div className={cls.generation_text}>
-            <h2 className={cls.generation_text__header}>Защита вашей онлайн безопасности с генератором паролей **** ****</h2>
-            <p className={cls.generation_text__description}>Обеспечьте надежность своих онлайн аккаунтов с помощью уникальных и сложных паролей. Злоумышленники становятся все искуснее во взломе, поэтому важно использовать надежные пароли для каждого аккаунта. Генератор паролей PASSWORD CRAFT создает уникальные комбинации больших и маленьких букв, цифр и специальных символов. Также обеспечивает удобство, экономя время и усилия. Не забывайте о других мерах безопасности, не делитесь паролями с посторонними, используйте общедоступные компьютеры и Wi-Fi сети с осторожностью, меняйте пароли регулярно.</p>
-        </div>
+            <div className={cls.generation_text}>
+                <h2 className={cls.generation_text__header}>{t('описание.МиниЗаголовок')}</h2>
+                <p className={cls.generation_text__description}>{t('описание.Текст')}</p>
+            </div>
     )
 }
 

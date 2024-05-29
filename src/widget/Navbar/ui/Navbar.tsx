@@ -3,25 +3,30 @@ import { classNames } from '../../../shared/lib/utils/classNames';
 import * as cls from './navbar.module.scss';
 import logo from '../../../shared/assets/logo.png'
 import avatar from '../../../shared/assets/file.jpg'
+import SwitchLang from '../../../widget/SwitchLang/SwitchLang';
+import { useTranslation } from 'react-i18next';
 
 interface NavbarProps {
   className?: string;
 }
 const Navbar = ({ className }: NavbarProps) => {
-    console.log(logo)
+  const { t, i18n } = useTranslation();
   return (
     <nav className={cls.nav}>
       <div className={cls.nav__wrap}>
         <img className={cls.nav__logo} src={logo} alt="logo" />
         <ul className={cls.nav__items}>  
+          <li>
+            <SwitchLang/>
+          </li>
           <li className='nav__item'>
             <AppLink theme={AppLinkTheme.SECONDARY} to={'/'}>
-              Main
+              {t('НавБар.Главная')}
             </AppLink> 
           </li>
           <li className='nav__item'>
             <AppLink theme={AppLinkTheme.SECONDARY} to={'/'}>
-              Все наши проекты
+              {t('НавБар.Все наши проекты')}
             </AppLink> 
           </li>
           <li className={cls.avatar}>

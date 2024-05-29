@@ -5,10 +5,12 @@ import ListAttributes from "../../../shared/ui/ListAttributes/ListAttributes";
 import BlockMainText from "../../../widget/BlockMainText";
 import ResultPassword from '../../../shared/ui/ResultPassword/ResultPassword'
 import generatePasswords from "../../../shared/lib/generationPassword";
+import { useTranslation } from "react-i18next";
 const GenerationForm = () => {
     const [lengthInput, setLengthInput] = useState(8);
     const [passwords, setPasswords] = useState([]);
     const [error, setError] = useState(false)
+    const { t, i18n } = useTranslation()
     const [attributes, setAttributes] = useState([
         { id: 1, checked: false, label: 'Использовать прописные буквы' },
         { id: 2, checked: false, label: 'Использовать строчные буквы' },
@@ -30,11 +32,11 @@ const GenerationForm = () => {
     return (
         <div className={cls.form}>
             <div>
-                <h1 className={cls.main_header}>Генератор паролей</h1>
+                <h1 className={cls.main_header}>{t('Заголовок')}</h1>
                 <BlockMainText/>
             </div>
             <form className={cls.form} action="">
-                <label htmlFor="#number" className={cls.form__label}>Длина пароля</label>
+                <label htmlFor="#number" className={cls.form__label}>{t('Длина пароля')}</label>
                 <input id="number" className={cls.form__count} type="number" value={lengthInput} onChange={(e)=> handlerInput(e)}/>
                 <div className={cls.form__error} style={{height: error? '42px' : '0px'}}>Длина пароля должна состоять минимум из 6 символов</div>
                 <ListAttributes attributes={attributes} setAttributes={setAttributes}/>

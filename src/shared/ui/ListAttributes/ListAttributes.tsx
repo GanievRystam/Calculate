@@ -3,6 +3,7 @@ import { useState } from 'react';
 import * as cls from './listAttributes.module.scss';
 import { useDispatch } from 'react-redux';
 import { AppDispatch, editProgress } from '../../../store/store';
+import { useTranslation } from 'react-i18next';
 interface Attribute {
     id: number; checked: boolean; label: string
 }
@@ -11,7 +12,7 @@ interface ListAttributesProps {
   setAttributes: (value:any) => void
 } 
 const ListAttributes = ({attributes, setAttributes}:ListAttributesProps) => {
-    
+      const { t, i18n } = useTranslation();
       const dispatch = useDispatch<AppDispatch>();
 
       const handleCheckboxChange = (id:number) => {
@@ -42,7 +43,7 @@ const ListAttributes = ({attributes, setAttributes}:ListAttributesProps) => {
                     id={`checkbox-${attribute.id}`}
                 />
                 <label htmlFor={`checkbox-${attribute.id}`} className={cls.form__checkboxFake}></label>
-                <span className="form__att_text">{attribute.label}</span>
+                <span className="form__att_text">{t(attribute.label)}</span>
                 </li>
             ))}
         </ul>

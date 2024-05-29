@@ -1,0 +1,19 @@
+{
+    "Заголовок": "Generation Password",
+    "описание": {
+        "МиниЗаголовок": "Protect your online security with a password generator **** ****",
+        "Текст": "Secure your online accounts with unique and complex passwords. Attackers are becoming more and more skilled at hacking, so it's important to use strong passwords for every account. PASSWORD CRAFT password generator creates unique combinations of capital and small letters, numbers and special characters. It also provides convenience, saving you time and effort. Don't forget other security measures, don't share passwords with strangers, use public computers and Wi-Fi networks with caution, change passwords regularly."
+    },
+    "НавБар": {
+        "Главная": "Main",
+        "Все наши проекты": "All our projects"
+    },
+    "Длина пароля": "Password length",
+    "Использовать прописные буквы": "Use capital letters",
+    "Использовать строчные буквы": "Use lowercase letters",
+    "Использовать цифры": "Use numbers",
+    "Использовать символы: %, *, ), ?, @, #, $, ~": "Use symbols: %, *, ), ?, @, #, $, ~",
+    "Сгенерировать пароль": "Generation password",
+    "Надёжность пароля": "Password strength",
+    "Уведомление": "The program will come up with 10 passwords, after generation you can copy them or download them as .txt file"
+}
