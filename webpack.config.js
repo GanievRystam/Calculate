@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const webpack = require("webpack");
 module.exports = {
   entry: './src/index.tsx',
   devtool: 'inline-source-map',
@@ -58,6 +59,7 @@ module.exports = {
     },
     compress: true,
     port: 3000,
+    hot: true,
   },
   plugins: [
     new MiniCssExtractPlugin(),
@@ -65,5 +67,6 @@ module.exports = {
       template: './public/index.html',
       scriptLoading: 'blocking'
     }),
+    new webpack.HotModuleReplacementPlugin(),
   ],
 };

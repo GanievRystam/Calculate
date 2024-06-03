@@ -5,11 +5,13 @@ import logo from '../../../shared/assets/logo.png'
 import avatar from '../../../shared/assets/file.jpg'
 import SwitchLang from '../../../widget/SwitchLang/SwitchLang';
 import { useTranslation } from 'react-i18next';
+import { useEffect, useState } from 'react';
 
 interface NavbarProps {
   className?: string;
 }
 const Navbar = ({ className }: NavbarProps) => {
+  const [props, setProps] = useState([className]);
   const { t, i18n } = useTranslation();
   return (
     <nav className={cls.nav}>
