@@ -8,7 +8,6 @@
     "start": "webpack serve --env port=3000",
     "build": "webpack --env mode=production",
     "build:dev": "webpack --env mode=development",
-    "vercel-build": "npm install && npm run build",
     "lint:scss": "npx stylelint \"**/*.scss\"",
     "lint:scss:fix": "npx stylelint \"**/*.scss\" --fix",
     "storybook": "storybook dev -p 6006 -c ./config/storybook",
