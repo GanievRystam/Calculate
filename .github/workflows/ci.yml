@@ -36,11 +36,11 @@ jobs:
       - name: screenshot testing
         run: npm run test:ui:ci
 
-      - name: Build Docker image
-        run: docker build -t zak/generation .
+      # - name: Build Docker image
+      #   run: docker build -t zak/generation .
 
-      - name: Log in to Docker Hub
-        run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
+      # - name: Log in to Docker Hub
+      #   run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
 
-      - name: Push Docker image to Docker Hub
-        run: docker push zak/generation
+      # - name: Push Docker image to Docker Hub
+      #   run: docker push zak/generation
