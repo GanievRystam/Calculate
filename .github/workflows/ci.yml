@@ -7,15 +7,17 @@ on:
   pull_request:
     branches:
       - main
+
 jobs:
- pipeline:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [ 17.x ]
+        node-version: [17.x]
     steps:
-    - uses: actions/checkout@v2
-      - name: Staring Node.js ${{ matrix.node-version }}
+      - uses: actions/checkout@v2
+
+      - name: Starting Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
@@ -23,25 +25,27 @@ jobs:
       - name: install modules
         run: npm install
 
-       - name: build production project
+      - name: build production project
         run: npm run build:prod
-      
+
+      # Uncomment these steps if needed
       # - name: linting typescript
       #   run: npm run lint:ts
       # - name: linting css
       #   run: npm run lint:scss
       # - name: unit testing
       #   run: npm run test:unit
+
       - name: build storybook
         run: npm run storybook:build
+
       - name: screenshot testing
         run: npm run test:ui:ci
 
+      # Uncomment these steps if needed
       # - name: Build Docker image
       #   run: docker build -t zak/generation .
-
       # - name: Log in to Docker Hub
       #   run: echo "${{ secrets.DOCKER_HUB_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_HUB_USERNAME }}" --password-stdin
-
       # - name: Push Docker image to Docker Hub
       #   run: docker push zak/generation
