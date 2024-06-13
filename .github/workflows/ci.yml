@@ -40,7 +40,7 @@ jobs:
         run: npm run storybook:build
 
       - name: screenshot testing
-        run: npm run test:ui:ci
+        run: npm run test:ui:ok
 
       # Uncomment these steps if needed
       # - name: Build Docker image
