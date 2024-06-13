@@ -78,8 +78,8 @@ module.exports = {
       scriptLoading: 'blocking'
     }),
     new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
+    // new BundleAnalyzerPlugin({
+    //   openAnalyzer: false
+    // })
   ],
 };
