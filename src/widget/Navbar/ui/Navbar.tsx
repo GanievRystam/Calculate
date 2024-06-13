@@ -6,15 +6,17 @@ import avatar from '../../../shared/assets/file.jpg'
 import SwitchLang from '../../../widget/SwitchLang/SwitchLang';
 import { useTranslation } from 'react-i18next';
 import { useEffect, useState } from 'react';
+import { RoutePath } from '../../../shared/config/routeConfig/routeConfig';
+import React from 'react';
 
 interface NavbarProps {
   className?: string;
 }
-const Navbar = ({ className }: NavbarProps) => {
+const Navbar: React.FC<NavbarProps> = ({className}) => {
   const [props, setProps] = useState([className]);
   const { t, i18n } = useTranslation();
   return (
-    <nav className={cls.nav}>
+    <nav className={classNames(cls.nav, {}, [className])}>
       <div className={cls.nav__wrap}>
         <img className={cls.nav__logo} src={logo} alt="logo" />
         <ul className={cls.nav__items}>  
@@ -22,8 +24,8 @@ const Navbar = ({ className }: NavbarProps) => {
             <SwitchLang/>
           </li>
           <li className='nav__item'>
-            <AppLink theme={AppLinkTheme.SECONDARY} to={'/'}>
-              {t('НавБар.Главная')}
+            <AppLink theme={AppLinkTheme.SECONDARY} to={'/qrkod'}>
+              QrKod
             </AppLink> 
           </li>
           <li className='nav__item'>

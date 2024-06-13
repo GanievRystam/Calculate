@@ -3,7 +3,9 @@
     color: var(--inverted-primary-color);
     position: relative;
     padding-bottom:10px;
-
+    &__dark {
+        background-color: red;
+    }
     &::after {
         content: '';
         position: absolute;

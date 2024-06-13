@@ -1,31 +1,40 @@
-name: CI/CD Pipeline
+name: linting, testing, building
 
 on:
-  push:
-    branches:
-      - main
+ push:
+    branches: [ master ]
   pull_request:
-    branches:
-      - main
+    branches: [ master ]
 
 jobs:
-  build:
+ pipeline:
     runs-on: ubuntu-latest
-
+    strategy:
+      matrix:
+        node-version: [ 17.x ]
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+    - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: '20'
+          node-version: ${{ matrix.node-version }}
 
-      - name: Install dependencies
+      - name: install modules
         run: npm install
 
-      - name: Run tests
-        run: npm test
+       - name: build production project
+        run: npm run build:prod
+      
+      # - name: linting typescript
+      #   run: npm run lint:ts
+      # - name: linting css
+      #   run: npm run lint:scss
+      # - name: unit testing
+      #   run: npm run test:unit
+      - name: build storybook
+        run: npm run storybook:build
+      - name: screenshot testing
+        run: npm run test:ui:ci
 
       - name: Build Docker image
         run: docker build -t zak/generation .

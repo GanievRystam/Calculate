@@ -41,7 +41,7 @@ const GenerationForm = () => {
                 <div className={cls.form__error} style={{height: error? '42px' : '0px'}}>Длина пароля должна состоять минимум из 6 символов</div>
                 <ListAttributes attributes={attributes} setAttributes={setAttributes}/>
                 <ResultPassword passwords={passwords}/>
-                <MainBtn onClick={(e:any) =>{handlerBtn(e)}}/>
+                <MainBtn theme="black" onClick={(e:any) =>{handlerBtn(e)}}/>
             </form>
         </div>
     )

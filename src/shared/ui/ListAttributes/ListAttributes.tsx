@@ -4,6 +4,7 @@ import * as cls from './listAttributes.module.scss';
 import { useDispatch } from 'react-redux';
 import { AppDispatch, editProgress } from '../../../store/store';
 import { useTranslation } from 'react-i18next';
+import React from 'react';
 interface Attribute {
     id: number; checked: boolean; label: string
 }
@@ -32,7 +33,7 @@ const ListAttributes = ({attributes, setAttributes}:ListAttributesProps) => {
         setAttributes(updatedAttributes);
       };
     return (
-        <ul className={cls.form__attributes}>
+        <ul className={cls.form__attributes} data-testid="sidebar">
             {attributes.map((attribute) => (
                 <li key={attribute.id} className={cls.form__attribute}>
                 <input 

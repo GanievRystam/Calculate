@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const webpack = require("webpack");
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 module.exports = {
   entry: './src/index.tsx',
   devtool: 'inline-source-map',
@@ -11,10 +12,18 @@ module.exports = {
       {
         test: /\.(ts|tsx)$/,
         exclude: /node_modules/,
+        use: [
+          {
+            loader: 'babel-loader',
+            options: {
+              presets: ['@babel/preset-env', '@babel/preset-react']
+            }
+          },
+          'ts-loader'
+        ],
         resolve: {
           extensions: ['.ts', '.tsx', '.js', '.json'],
         },
-        use: 'ts-loader',
       },
       {
         test: /\.svg$/,
@@ -60,13 +69,17 @@ module.exports = {
     compress: true,
     port: 3000,
     hot: true,
+    historyApiFallback: true
   },
   plugins: [
     new MiniCssExtractPlugin(),
     new HtmlWebpackPlugin({
-      template: './public/index.html',
+      template: 'public/index.html',
       scriptLoading: 'blocking'
     }),
     new webpack.HotModuleReplacementPlugin(),
+    new BundleAnalyzerPlugin({
+      openAnalyzer: false
+    })
   ],
 };
